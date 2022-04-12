@@ -1,0 +1,14 @@
+img{
+    width: 30px;
+    padding-left: 20px;
+}
+
+.bnt{
+    position: absolute;
+}
+.container{
+    margin-top: 250px;
+
+    border-style: solid;
+    max-width: 300px;
+}

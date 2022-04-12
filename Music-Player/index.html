@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <audio id="music">
+            <source src="./audio/olhaOPorco.ogg" type="audio/ogg">
+
+        </audio>
+
+        <div class="bnt">
+            <img onclick="pause()" src="./icons/pause.png">
+            <img onclick="volta()" src="./icons/volta5.png">
+            <img onclick="avanca()" src="./icons/avanca5.png">
+            <img onclick="aumentaVol()" src="./icons/high-volume.png">
+        </div> <br><br><br><br>
+
+        <div id="barraProg">
+            <progress  id="barra" max="100" value="0"></progress>
+            <input class="seek" id="seek" value="0" max="100" type="range" step="1">
+        </div>
+        <span id="tempo_atual">00:00</span>
+        <span id="tempo_total">00:00</span>
+
+
+    </div>
+
+
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
