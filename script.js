@@ -1,11 +1,10 @@
 let music = document.getElementById("music")
 let barra = document.getElementById("barra")
+let ponto = document.getElementById("ponto")
 
 let tempoAtual = document.getElementById("tempo_atual")
 let tempoTotal = document.getElementById("tempo_total")
 
-
-let seek = document.getElementById("seek")
 
 music.addEventListener('play', play_evento, false);
 music.addEventListener('timeupdate', atualizar, false);
@@ -17,15 +16,18 @@ function play_evento() {
     tempoAtual.innerHTML = secToStr(music.currentTime)
     tempoTotal.innerHTML = secToStr(music.duration)
 
-    seek.max = music.duration;
+    ponto.max =  music.duration;
+    ponto.value = music.currentTime;
+
     barra.max = music.duration;
     barra.value = music.currentTime;
 }
 
 function atualizar() {
     tempoAtual.innerHTML = secToStr(music.currentTime);
-    seek.value = music.currentTime;
     barra.value = music.currentTime;
+    ponto.value = music.currentTime;
+
 }
 
 function secToStr(sec_num) {

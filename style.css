@@ -5,10 +5,78 @@ img{
 
 .bnt{
     position: absolute;
+    margin-top: 20px;
 }
 .container{
-    margin-top: 250px;
-
+    height: 300px;
+    text-align: center;
+    display:inline-block;
     border-style: solid;
-    max-width: 300px;
+    padding: 30px;
+    top: 0;
+    left: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    
+}
+#barraProg{
+    margin-top: 10px;
+    height: 6px;
+    border-style: solid;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    justify-content: flex-start;
+}
+
+#barra{
+    height: 6px;
+    width: 100%;
+    background-color: black;
+
+}
+
+#ponto{
+    width: 20px;
+    height: 20px;
+    background-color: #333;
+    border-radius: 50%;
+   
+    margin-left: -2px;
+}
+
+.capa{
+    width: 200px;
+    height: 200px;
+    border-style: solid;
+    background-color: palevioletred;
+    margin-bottom: 30px;
+}
+.background{
+    background-image: linear-gradient( 0deg,
+    #FF00CC,
+    #AF00FF);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: -10px;
+    height: 720px;
+}
+
+#tempo_atual{
+    margin-right: 20px;
+}
+#tempo_total{
+    margin-left: 100px;
+}
+.pause{
+    margin-left: -24px;
+}
+.volta{
+    margin-left: 25px;
+    margin-right: -22px;
+}
+.avanca{
+    margin-right: 20px;
 }
