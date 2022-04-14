@@ -16,8 +16,7 @@ function play_evento() {
     tempoAtual.innerHTML = secToStr(music.currentTime)
     tempoTotal.innerHTML = secToStr(music.duration)
 
-    ponto.max =  music.duration;
-    ponto.value = music.currentTime;
+    
 
     barra.max = music.duration;
     barra.value = music.currentTime;
@@ -26,7 +25,7 @@ function play_evento() {
 function atualizar() {
     tempoAtual.innerHTML = secToStr(music.currentTime);
     barra.value = music.currentTime;
-    ponto.value = music.currentTime;
+   
 
 }
 
