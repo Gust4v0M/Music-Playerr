@@ -31,12 +31,13 @@ img{
     align-items: center;
     border-radius: 10px;
     justify-content: flex-start;
+
 }
 
 #barra{
     height: 6px;
     width: 100%;
-    background-color: black;
+
 }
 
 #ponto{

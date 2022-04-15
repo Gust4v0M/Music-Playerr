@@ -1,6 +1,7 @@
 let music = document.getElementById("music")
 let barra = document.getElementById("barra")
 let ponto = document.getElementById("ponto")
+let barraProg = document.getElementById("barraProg")
 
 let tempoAtual = document.getElementById("tempo_atual")
 let tempoTotal = document.getElementById("tempo_total")
@@ -8,8 +9,9 @@ let tempoTotal = document.getElementById("tempo_total")
 
 music.addEventListener('play', play_evento, false);
 music.addEventListener('timeupdate', atualizar, false);
+music.addEventListener('click', AttBarra, false);
 
-
+timer = setInterval(range_slider, 1000)
 
 function play_evento() {
 
@@ -17,7 +19,7 @@ function play_evento() {
     tempoTotal.innerHTML = secToStr(music.duration)
 
     
-
+    ponto.max = music.duration;
     barra.max = music.duration;
     barra.value = music.currentTime;
 }
@@ -25,7 +27,7 @@ function play_evento() {
 function atualizar() {
     tempoAtual.innerHTML = secToStr(music.currentTime);
     barra.value = music.currentTime;
-   
+    ponto.value = music.currentTime;  
 
 }
 
@@ -44,7 +46,13 @@ function secToStr(sec_num) {
     return tempo
 }
 
+function AttBarra(){
+   barra.width = music.duration
+   barra.width = music.currentTime
 
+    barra.max = music.duration;
+    barra.value = music.currentTime;
+}
 
 function pause() {
     music.play();
