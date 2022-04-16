@@ -97,3 +97,38 @@ h2{
     margin-top: -20px;
     margin-left: -35px;
 }
+
+@media (max-width: 700px){
+    .background{
+        display: table;
+        width: 100vw;
+        height: 100vh;
+        padding-left: 55px;
+        padding-top: 180px;
+    }
+    #container{
+        height: 500px;
+        width: 250px;
+    }
+
+    .capa{
+        margin-left: 30px;
+    }
+    /* .mumu{
+        margin-left: 10px;
+    } */
+    h2{
+        margin-left: 10px;
+    }
+    .bnt{
+        margin-left: 22px;
+        
+    }
+
+    #barraProg{
+        max-width: 200px ;
+        margin-left: 24px;
+    }
+
+}
+
