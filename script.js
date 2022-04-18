@@ -1,16 +1,35 @@
+
+var i = 0
+var musicas = [
+        {mp3:'dt_bed.mp3', nome:'Death bed', src:"./audio/dt_bed.mp3"},
+        {mp3:'All-I-Want.mp3', nome:'All I Want', src:"./audio/All-I-Want.mp3"},     
+        {mp3:'its_you.mpeg', nome:'Its you', src:"./audio/its_you.mpeg"},
+        {mp3:'Say_You_Wont_Let_Go.mp3', nome:'Say you wont let go', src:"./audio/Say_You_Won't_Let_Go.mp3"},
+    ]
+
 let music = document.getElementById("music")
 let barra = document.getElementById("barra")
-let ponto = document.getElementById("ponto")
-let container = document.getElementById("container")
-let barraProg = document.getElementById("barraProg")
+
 
 let tempoAtual = document.getElementById("tempo_atual")
 let tempoTotal = document.getElementById("tempo_total")
 
-
+music.addEventListener('ended', proxima, false)
 music.addEventListener('play', play_evento, false);
 music.addEventListener('timeupdate', atualizar, false);
 
+
+
+function proxima(){
+if(music.canPlayType("music/mp3") != ''){
+    music.src = musicas[i].mp3;
+}
+document.getElementById('nome_musica').innerHTML = musicas[i].nome;
+music.play();
+
+i++
+if( i>= musicas.length) i = 0;
+}
 
 
 function play_evento() {
@@ -18,15 +37,13 @@ function play_evento() {
     tempoAtual.innerHTML = secToStr(music.currentTime)
     tempoTotal.innerHTML = secToStr(music.duration)
 
-    barra.max = music.duration;
-   
+    barra.value = music.currentTime;
+    barra.max = music.duration;   
 }
 
 function atualizar() {
     tempoAtual.innerHTML = secToStr(music.currentTime);
     barra.value = music.currentTime;
-    ponto.value = music.currentTime;  
-
 }
 
 function secToStr(sec_num) {
@@ -44,8 +61,7 @@ function secToStr(sec_num) {
     return tempo
 }
 
-
-document.getElementById("barra").addEventListener('click', (e)=>{ 
+barra.addEventListener('click', (e)=>{ 
 let tamanhoBarra = e.srcElement.clientWidth;
 let clickBar = e.offsetX;
 let value = (100 * clickBar) / tamanhoBarra;
