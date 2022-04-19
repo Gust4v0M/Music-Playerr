@@ -1,10 +1,10 @@
 
 var i = 0
 var musicas = [
-        {mp3:'dt_bed.mp3', nome:'Death bed', src:"./audio/dt_bed.mp3"},
-        {mp3:'All-I-Want.mp3', nome:'All I Want', src:"./audio/All-I-Want.mp3"},     
-        {mp3:'its_you.mpeg', nome:'Its you', src:"./audio/its_you.mpeg"},
-        {mp3:'Say_You_Wont_Let_Go.mp3', nome:'Say you wont let go', src:"./audio/Say_You_Won't_Let_Go.mp3"},
+   
+        {mp3:"./audio/All-I-Want.mp3", nome:'All I Want', src:"./audio/All-I-Want.mp3"},     
+        {mp3:"./audio/its_you.mpeg", nome:'Its you', src:"./audio/its_you.mpeg"},
+        {mp3:"./audio/Say_You_Won't_Let_Go.mp3", nome:'Say you wont let go', src:"./audio/Say_You_Won't_Let_Go.mp3"},
     ]
 
 let music = document.getElementById("music")
@@ -19,32 +19,31 @@ music.addEventListener('play', play_evento, false);
 music.addEventListener('timeupdate', atualizar, false);
 
 
-
-function proxima(){
-if(music.canPlayType("music/mp3") != ''){
-    music.src = musicas[i].mp3;
-}
-document.getElementById('nome_musica').innerHTML = musicas[i].nome;
-music.play();
-
-i++
-if( i>= musicas.length) i = 0;
-}
-
-
 function play_evento() {
 
     tempoAtual.innerHTML = secToStr(music.currentTime)
     tempoTotal.innerHTML = secToStr(music.duration)
 
+    barra.max = music.duration;  
     barra.value = music.currentTime;
-    barra.max = music.duration;   
+ 
 }
 
 function atualizar() {
     tempoAtual.innerHTML = secToStr(music.currentTime);
     barra.value = music.currentTime;
 }
+
+function proxima(){
+    if(music.canPlayType("audio/mp3") != ''){
+        music.src = musicas[i].mp3;
+    }
+    document.getElementById('nome_musica').innerHTML = musicas[i].nome;
+    music.play();
+    
+    i++
+    if( i >= musicas.length) i = 0;
+    }
 
 function secToStr(sec_num) {
     sec_num = Math.floor(sec_num)
@@ -70,6 +69,7 @@ let duration = music.duration;
 let current = (duration / 100) * value;
 music.currentTime = current;
 })
+
 
 function pause() {
     music.play();
