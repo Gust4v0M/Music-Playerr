@@ -1,18 +1,47 @@
+@font-face {
+    font-family:Minha-fonte1;
+    src: url(/fonts/TrapMusic.ttf);
+}
+body{
+        background-image: linear-gradient( 0deg,
+    #FF00CC,
+    #AF00FF);
+    overflow: auto;
+    overflow: hidden;
+}
+.titulo{
+    font-family: Minha-fonte1;
+    display:inline-block;
+    overflow: auto;
+    margin-top: px;
+    margin-bottom: -100px;
+    margin-left: 40%;
+    font-size:25px;
+}
+h1{
+    margin-bottom: -30px;
+    padding-bottom: -100px;
+}
+
 img{
     width: 30px;
     padding-left: 20px;
 }
 
-.bnt{
+/* .bnt{
     position: absolute;
-    margin-top: 20px;
-}
+    padding-top: 10px;
+    font-size:35px;
+    margin-left:-13px; 
+    
+} */
 #container{
-    height: 350px;
+    height: 400px;
+    width: 250px;
     text-align: center;
     display:inline-block;
     border-style: solid;
-    padding: 30px;
+    padding: 35px;
     top: 0;
     left: 0;
     right: 0;
@@ -50,7 +79,7 @@ img{
 }
 
 .capa{
-    width: 200px;
+    width: 250px;
     height: 200px;
     border-style: solid;
     background-color: palevioletred;
@@ -58,18 +87,15 @@ img{
     border-radius: 10px;
 }
 
-.mumu{
-    width: 203px;
-    height: 203px;
+#capa2{
+    width: 253px;
+    height: 200px;
     margin-left: -20px;
 
     border-radius: 10px;
 }
 
 .background{
-    background-image: linear-gradient( 0deg,
-    #FF00CC,
-    #AF00FF);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -78,24 +104,62 @@ img{
 }
 
 #tempo_atual{
-    margin-right: 20px;
+    margin-right: 70px;
 }
 #tempo_total{
     margin-left: 100px;
 }
-.pause{
-    margin-left: -24px;
+
+#volume{
+    margin-right: px;
+    margin-left:-85px ;
+    display: inline-block;
+
+}
+#volumeBar{
+    margin: left -11px;
+
+}
+
+#nextMusic{
+    margin-right: 10px;
+    margin-left: -12px;
+    margin-bottom: 9px;
+}
+
+#backMusic{
+
+    margin: 10px;
+    margin-left: -25px;
+    margin-right: 15px;
+}
+#play{
+    margin: 10px;
+    margin-right: px;
+}
+#pause{
+    margin: 10px;
+  
+    display: none;
 }
 .volta{
-    margin-left: 25px;
-    margin-right: -22px;
+    margin: 10px;
+    margin-left: -15px;
+    margin-right: -15px;
 }
 .avanca{
-    margin-right: 20px;
+    margin-bottom: 10px;
+    margin-left: -15px;
+    margin-right: 15px    
 }
 h2{
     margin-top: -20px;
     margin-left: -35px;
+}
+#sonBar{
+    transform: rotate(-90deg);
+    margin-left: 10px;
+    padding-top: -100px;
 }
 
 @media (max-width: 700px){
@@ -107,12 +171,18 @@ h2{
         padding-top: 180px;
     }
     #container{
+        margin-top: 25%;
+        margin-left: 12%;
         height: 400px;
         width: 250px;
+        padding: 25px;
+    }
+    .titulo{
+        margin-bottom: -200px;
     }
 
     .capa{
-        margin-left: 30px;
+        margin-left: -3px;
     }
     /* .mumu{
         margin-left: 10px;
@@ -121,14 +191,19 @@ h2{
         margin-left: 10px;
     }
     .bnt{
-        margin-left: 22px;
-        
+        margin-left: -6px;
+        font-size: 28px;        
     }
 
     #barraProg{
-        max-width: 200px ;
-        margin-left: 24px;
+        width: 80;
+        margin-left: px;
+
     }
+    #volumeBar{
+        margin-bottom: 50px;
+    }
+    
 
 }
 

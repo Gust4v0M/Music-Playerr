@@ -9,18 +9,22 @@
     <title>Music Player</title>
 </head>
 
-<body>
+    <div class="titulo" >
+    <h1>Music Player</h1>
+<p>by morgadinho</p>
+</div>
+
     <div class="background">
         <div id="container">
             <audio id="music">
                 <source src="./audio/dt_bed.mp3" type="audio/ogg">
-                <source src="./audio/All-I-Want.mp3" type="audio/ogg">
+                <!-- <source src="./audio/All-I-Want.mp3" type="audio/ogg">
                 <source src="./audio/its_you.mpeg" type="audio/ogg">
                 <source src="./audio/Say_You_Won't_Let_Go.mp3" type="audio/ogg">
-                    
+                     -->
             </audio>
             
-            <div class="capa"> <img class="mumu" src="./capas/murillo.jpeg" alt=""></div>
+            <div class="capa"> <img id="capa2" src="./capas/death_bed_img.jpg" alt=""></div>
 
 
         <h2 id="nome_musica">Death bed</h2>
@@ -34,16 +38,24 @@
 
 
 
-            <div class="bnt">
-                <img class="pause" onclick="pause()" src="./icons/pause.png">
+            <div class="bnt">               
+                <img id="backMusic" onclick="voltarMusica()" src="./icons/backward.png">
                 <img class="volta" onclick="volta()" src="./icons/volta5.png">
+                <img id="play" onclick="tocarMusica()" src="./icons/play.png">
+                <img id="pause"onclick="pausarMusica()" src="./icons/pause.png">
                 <img class="avanca" onclick="avanca()" src="./icons/avanca5.png">
-                <img class="aumentaVol" onmouseover="aumentaVol()" src="./icons/high-volume.png">
-            </div> <br><br><br><br>
+                <img id="nextMusic" onclick="renderizarMusica()" src="./icons/forward.png">
+               <div> <img id="volume" onclick="dentro()" src="./icons/high-volume.png"> 
+                <input id="volumeBar" onchange="barraa()" type="range" min="0" max="1" step="0.1"> </div>
+
+            
+              
+            </div> 
 
         </div>
 
     </div>
+
     <script src="./script.js"></script>
 </body>
 
