@@ -162,7 +162,7 @@ h2{
     padding-top: -100px;
 }
 
-@media (max-width: 700px){
+@media (max-width: 480px){
     .background{
         display: table;
         width: 100vw;
