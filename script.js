@@ -1,4 +1,4 @@
-
+// array criado para poder fazer a playlist
 var i = 0
 var musicas = [
    
@@ -7,6 +7,7 @@ var musicas = [
         {mp3:"./audio/Say_You_Won't_Let_Go.mp3", nome:'Say you wont let go', src:"./audio/Say_You_Won't_Let_Go.mp3",  img:'./capas/James_arthur.jpg'},
     ]
 
+//dei nome aos elementos que eu ia usar
 let music = document.getElementById("music")
 let barra = document.getElementById("barra")
 let nextMusic = document.getElementById("nextMusic")
@@ -18,15 +19,14 @@ let Pause = document.getElementById("pause")
 let tempoAtual = document.getElementById("tempo_atual")
 let tempoTotal = document.getElementById("tempo_total")
 
+//criei alguns eventos  importantes
 music.addEventListener('canplay', play_evento, false);
 music.addEventListener('timeupdate', atualizar, false);
 music.addEventListener('ended', renderizarMusica, false)
 music.addEventListener('ended', voltarMusica, false)
 
 
-
-
-
+//para poder  setar o tempo que a musica vai ter e pegar o valor maximo da barra
 function play_evento() {
 
     tempoAtual.innerHTML = secToStr(music.currentTime)
@@ -37,11 +37,12 @@ function play_evento() {
  
 }
 
+//essa aqui é pra ir atualizando o timer e a barra
 function atualizar() {
     tempoAtual.innerHTML = secToStr(music.currentTime);
     barra.value = music.currentTime;
 }
-
+//aqui é uma pra playlist
 function renderizarMusica(){
     if(music.canPlayType("audio/mp3") != ''){
         music.src = musicas[i].mp3;
@@ -54,8 +55,8 @@ function renderizarMusica(){
     if( i >= musicas.length) i = 0;
     
     }
-
-    function voltarMusica (){
+//pra voltar a musica da playlist
+function voltarMusica (){
         if(music.canPlayType("audio/mp3") != ''){
             music.src = musicas[i].mp3;
         }
@@ -68,7 +69,7 @@ function renderizarMusica(){
     }
 
 
-
+//para o timer ficar igual ao de uma música
 function secToStr(sec_num) {
     sec_num = Math.floor(sec_num)
     var horas = Math.floor(sec_num / 3600);
@@ -84,6 +85,8 @@ function secToStr(sec_num) {
     return tempo
 }
 
+//para a barra ficar interagivel
+
 barra.addEventListener('click', (e)=>{ 
 let tamanhoBarra = e.srcElement.clientWidth;
 let clickBar = e.offsetX;
@@ -94,6 +97,7 @@ let current = (duration / 100) * value;
 music.currentTime = current;
 })
 
+//os botões
 
 function tocarMusica(){
     music.play();
